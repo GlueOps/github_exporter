@@ -370,5 +370,12 @@ func RootFlags(cfg *config.Config) []cli.Flag {
 			Sources:     cli.EnvVars("GITHUB_EXPORTER_RUNNERS_LABELS"),
 			Destination: &cfg.Target.Runners.Labels,
 		},
+		&cli.BoolFlag{
+			Name:        "collector.pull_requests",
+			Value:       false,
+			Usage:       "Enable collector for pull requests",
+			Sources:     cli.EnvVars("GITHUB_EXPORTER_COLLECTOR_PULL_REQUESTS"),
+			Destination: &cfg.Collector.PullRequests,
+		},
 	}
 }

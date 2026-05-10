@@ -1,0 +1,13 @@
+# Files owned by GlueOps — never overwritten when merging from upstream.
+# Requires one-time local setup: git config merge.ours.driver true
+.github/workflows/docker.yml    merge=ours
+.github/workflows/release.yml   merge=ours
+.github/workflows/binaries.yml  merge=ours
+.github/workflows/docs.yml      merge=ours
+.github/workflows/flake.yml     merge=ours
+.github/workflows/kustomize.yml merge=ours
+.codacy.yml                     merge=ours
+.github/settings.yml            merge=ours
+.github/semantic.yml            merge=ours
+artifacthub-repo.yml            merge=ours
+CONTRIBUTING.md                 merge=ours

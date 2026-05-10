@@ -1,3 +1,31 @@
+# GlueOps Fork Setup
+
+This is a GlueOps fork of [promhippie/github_exporter](https://github.com/promhippie/github_exporter).
+
+## One-time local setup
+
+After cloning, run these two commands:
+
+```bash
+# Track upstream for code updates
+git remote add upstream https://github.com/promhippie/github_exporter
+
+# Tell Git to always keep our versions of CI/config files during upstream merges
+git config merge.ours.driver true
+```
+
+## Syncing upstream changes
+
+```bash
+git fetch upstream
+git merge upstream/master
+git push
+```
+
+GlueOps-owned files (`.github/workflows/docker.yml`, etc.) are protected via `.gitattributes` and will never be overwritten by upstream merges.
+
+---
+
 # Contributing to Promhippie
 
 Welcome! Our community focuses on helping others and making this project the

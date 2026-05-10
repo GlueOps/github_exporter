@@ -175,6 +175,19 @@ func handler(cfg *config.Config, db store.Store, logger *slog.Logger, client *gi
 		))
 	}
 
+	if cfg.Collector.PullRequests {
+		logger.Debug("PullRequest collector registered")
+
+		registry.MustRegister(exporter.NewPRCollector(
+			logger,
+			client,
+			db,
+			requestFailures,
+			requestDuration,
+			cfg.Target,
+		))
+	}
+
 	if cfg.Collector.WorkflowRuns {
 		logger.Debug("WorkflowRun collector registered")
 
