@@ -33,11 +33,10 @@ jobs:
           images: |
             ghcr.io/glueops/github-exporter
           tags: |
-            type=ref,event=pr
-            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/master' }}
-            type=semver,pattern=v{{version}}
-            type=semver,pattern=v{{major}}.{{minor}}
-            type=semver,pattern=v{{major}}
+            type=ref,event=branch,prefix=
+            type=ref,event=tag,prefix=
+            type=sha,format=short,prefix=
+            type=sha,format=long,prefix=
 
       - name: Setup qemu
         uses: docker/setup-qemu-action@v4
