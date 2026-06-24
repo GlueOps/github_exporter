@@ -20,10 +20,10 @@ jobs:
 
     steps:
       - name: Checkout source
-        uses: actions/checkout@v6
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
 
       - name: Generate manifest
-        uses: actionhippie/kustomize@v3
+        uses: actionhippie/kustomize@71318607e2c13073edb298a11262c153bfa0929a # v3
         with:
           version: 5.7.0
           path: deploy/kubernetes/
